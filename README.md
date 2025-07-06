@@ -67,5 +67,5 @@ Edit `user_config.json` to set up your own admin user:
 
 ### Start Script:
 ```bash
-python ./dx-cluster_telnet.py
+python .\dx-cluster_telnet.py
 ```
