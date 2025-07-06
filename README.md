@@ -79,15 +79,18 @@ python .\dx-cluster_telnet.py
 **For Role: User**
 - `/start` – Start receiving cluster messages  
 - `/stop` – Stop receiving cluster messages  
-- `/status` – Show your current (personal) configuration  
-- `/filter` – Set up a personal filter
+- `/status` – Show your current (personal) configuration. No filter = no Message
 - `/filter` – Set up or adjust your personal filter settings  
-  - `/filter prefix <value>` – Set a callsign prefix filter (e.g. `DL`, `HB9`)  
+  - `/filter prefix <value>` – Set a callsign prefix filter (e.g. `DL`, `HB9`)
   - `/filter suffix <value>` – Set a callsign suffix filter (e.g. `/QRP`, `/MM`)  
-  - `/filter call <callsign>` – Monitor a specific callsign  
-  - `/filter clear` – Remove all active filters  
-  - `/filter status` – Show currently active filters  
-  - `/filter radius on|off` – Enable or disable radius-based filtering  
+  - `/filter call <callsign>` – Monitor a specific callsign
+    > ✅ Multiple values can be comma- or space-separated
+    > 
+    > 🧹 Leave input empty to clear the corresponding filter
+    > 
+    > ⚠️ **No active filters = No messages will be received!**
+    > 
+  - `/filter radius <on|off>` – Enable or disable radius-based filtering  
 - `/hilfe` – Display the help page
 
 **For Role: Admin**
