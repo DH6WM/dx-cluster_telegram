@@ -69,3 +69,26 @@ Edit `user_config.json` to set up your own admin user:
 ```bash
 python .\dx-cluster_telnet.py
 ```
+
+---
+
+## 📲 Usage
+
+### Commands
+
+**For Role: User**
+- `/start` – Start receiving cluster messages  
+- `/stop` – Stop receiving cluster messages  
+- `/status` – Show your current (personal) configuration  
+- `/filter` – Set up a personal filter
+- `/filter` – Set up or adjust your personal filter settings  
+  - `/filter prefix <value>` – Set a callsign prefix filter (e.g. `DL`, `HB9`)  
+  - `/filter suffix <value>` – Set a callsign suffix filter (e.g. `/QRP`, `/MM`)  
+  - `/filter call <callsign>` – Monitor a specific callsign  
+  - `/filter clear` – Remove all active filters  
+  - `/filter status` – Show currently active filters  
+  - `/filter radius on|off` – Enable or disable radius-based filtering  
+- `/hilfe` – Display the help page
+
+**For Role: Admin**
+- `/approve <username> <role>` – Approve a new user and assign permissions
