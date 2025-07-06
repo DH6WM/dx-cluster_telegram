@@ -65,7 +65,7 @@ Edit `user_config.json` to set up your own admin user:
 - Copy that ID into `user_config.json` by replacing `<your Chat ID>`
 
 
-To start the Script, run:
+### Start Script:
 ```bash
 python ./dx-cluster_telnet.py
 ```
