@@ -1,0 +1,11 @@
+{
+    "<your Chat ID>": {
+        "username": "",
+        "status": "active",
+        "role": "admin",
+        "prefix": [],
+        "suffix": [],
+        "call": [],
+        "radius": "off"
+    }
+}
