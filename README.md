@@ -1,18 +1,18 @@
 # 📡 DX Cluster Monitor Bot
 
-A Python-based async Telegram bot that connects to a telnet-based DX Cluster and monitors real-time amateur radio spot activity. The bot filters incoming DX spots based on user-defined rules and notifies you via Telegram when a match occurs.
-By Ham Radio Op. DH6WM
+A Python-based async Telegram bot that connects to a Telnet-based DX Cluster and monitors real-time amateur radio spot activity. The bot filters incoming DX spots based on user-defined rules and notifies you via Telegram when a match is found.  
+By Ham Radio Operator **DH6WM**
 
 ---
 
 ## ✨ Features
 
-- 🔍 Realtime DX spot parsing from telnet clusters
-- 🧠 Band and mode detection based on frequency and Comment
-- 📬 Telegram bot alerts for callsign matches
-- 📏 Optional filtering by callsign prefix/suffix/region...
-- 📈 Logging to daily CSV files (spots, messages, errors)
-- 📂 Logs stored in `/log` folder, structured by type
+- 🔍 Realtime DX spot parsing from Telnet clusters  
+- 🧠 Band and mode detection based on frequency and comment  
+- 📬 Telegram bot alerts for callsign matches  
+- 📏 Optional filtering by callsign prefix, suffix, or region  
+- 📈 Logging to daily CSV files (spots, messages, errors)  
+- 📂 Logs stored in the `/log` folder, organized by type  
 
 ---
 
@@ -20,28 +20,52 @@ By Ham Radio Op. DH6WM
 
 ### Prerequisites
 
-- Python 3.13.3+
-- A Telegram bot token
-- A telnet-based DX cluster (e.g. `dxc.cluster.net`)
+- Python **3.11+**  
+- A Telegram bot token  
+- Access to a Telnet-based DX Cluster (e.g. `dxc.cluster.net`)  
+
+---
 
 ### Installation
 
+```bash
 git clone https://github.com/DH6WM/dx-cluster_telegram.git
 cd dx-cluster_telegram
 
 pip install telnetlib3
 pip install python-telegram-bot
+```
 
-Edit dx-cluster_telnet.py to configure:
-- Telnet Server, Port, Username and Password
-- Telegram Bot Token (can be done direct into the in the bot_token variable or via an Environment variable)
-- Cluster Radius (in the variable RADIUS_PREFIXES) is currently set to Germany and its immediate neighboring countries
+---
 
-Edit user_config.json to set up your own admin user:
-- set up your bot by contacting @BotFather on Telegram
-- follow instructions...
-- find your own Bot and start a private chat
-- open "https://api.telegram.org/bot<BotToken>/getUpdates" on a Browser fill <BotToken> with ten API Key by @BotFather.
-- read out chatID under result/message/from/id
-- enter the ID in your user_config.json file (replace <your Chat ID>)
+### Configuration
 
+Edit `dx-cluster_telnet.py` to configure:
+
+- **Telnet server, port, username, and password**
+
+- **Telegram bot token**  
+  - Set it directly in the `bot_token` variable  
+  - Or load it from an environment variable (recommended for security)
+
+- **Cluster radius**  
+  - Configurable via the `RADIUS_PREFIXES` variable  
+  - Currently set to Germany and its immediate neighboring countries
+
+### Telegram Bot Setup
+
+Edit `user_config.json` to set up your own admin user:
+
+- Create a new bot by contacting [@BotFather](https://t.me/BotFather) on Telegram
+- Follow the instructions and copy your API token
+- Start a chat with your bot
+- Open the following URL in your browser (replace `<BotToken>` with your token):  
+`https://api.telegram.org/bot<BotToken>/getUpdates`
+- Find your own chat ID under `result/message/from/id`
+- Copy that ID into `user_config.json` by replacing `<your Chat ID>`
+
+
+To start the Script, run:
+```bash
+python ./dx-cluster_telnet.py
+```
